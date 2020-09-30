@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import FadeIn from 'react-fade-in';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">     
+        <div className = "slide-right">
+          <h1 className = "name">
+            RP__Photography
+          </h1>
+        </div>
+        <div className = "slide-left">
+          <h2 className = "line">
+            ________________________
+          </h2>
+        </div>
+        <FadeIn delay = {3300} transitionDuration = {2000}>
+          <button className ="enterButton">
+            ENTER
+          </button>
+        </FadeIn>
     </div>
   );
 }

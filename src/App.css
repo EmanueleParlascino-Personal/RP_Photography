@@ -1,38 +1,69 @@
+
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  background-image: url(https://www.formica.com/en-ie/-/media/formica/emea/products/swatch-images/f9485/f9485-swatch.jpg?rev=0eb0345fe06b4047816b46f3f0d8d09e);
+  background-size: cover;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+.slide-right {
+  width: 100%;
+  max-width: 100%
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.name {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:#cfcfcf ;
+  animation: 2s slide-right 2s forwards;
+    transform:translateX(-100%);
+}
+
+.slide-left {
+  width: 100%;
+  transform: translateY(-150px) ;
+  max-width: 100%
+}
+
+.line{
+  animation: 2s slide-left 2s backwards;
+    transform:translateX(100%);
+  animation-fill-mode: forwards;  
+}
+.enterButton{
+  background: rgba(68,68,68,0.2);
+  border-width: 4px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border-color: thistle;
+  border-radius: 2pc;
+  color: white;
+  font-size: 2rem;
+  transform: translateY(-150px) ;
+  width: 11vh;
+  height: 5vh;
+  align-self: center;
+
+}
+
+
+
+@keyframes slide-right {
   to {
-    transform: rotate(360deg);
+    transform:translateX(0);
   }
 }
+
+@keyframes slide-left {
+  to {
+    transform:translateX(0);
+  }
+}
+
+
+
