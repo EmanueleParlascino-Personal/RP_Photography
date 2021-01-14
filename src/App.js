@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import FadeIn from 'react-fade-in';
 import images from './images'
 import Grid from "@material-ui/core/Grid"
@@ -17,8 +17,7 @@ import {
   Switch,
   Route,
   Link,
-  useRouteMatch,
-  useParams
+  useRouteMatch
 } from "react-router-dom";
 
 
@@ -32,10 +31,7 @@ export default function App() {
           </Route>
           <Route path="/Home">
             <Home />
-          </Route>
-          <Route path="/About">
-            <About />
-          </Route>    
+          </Route>  
         </Switch>
     </Router>
   );
@@ -63,7 +59,7 @@ function Landing() {
           <button className ="btn">
               <Link to = "/Home" style = {{color: "#3d2a66", fontFamily: "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif", textDecoration:"none"}}>ENTER</Link>
           </button>
-         </FadeIn>   
+        </FadeIn>   
         </div>
       </div>     
     </div> 
@@ -110,6 +106,9 @@ function Home() {
         <Route path={`${path}/about`}>
           <About />
         </Route>
+        <Route path={`${path}/work`}>
+          <Work />
+        </Route>
       </Switch>
     
     
@@ -118,7 +117,7 @@ function Home() {
         <div className = "footer-wrapper">
           <div className = "single-footer">
             <h2>Links</h2>
-            <p>Instagram</p>
+            <a href = "https://www.instagram.com/bakedandshot/" target = "_blank" rel="noopener noreferrer"><p>Instagram</p></a>
             <p>Facebook</p>
           </div>
         </div>
@@ -137,9 +136,58 @@ function Gallery() {
             alignItems="center"
             spacing = {2}
           >
-          {images.map(({id, src, title, type}) => <Grid item xs = "auto" key = {id}><img src = {src} className = "item" title= {title}  md = "auto" alt = {title} /></Grid>)}
+          {images.map(({id, src, title, type}) => 
+          <Grid item xs = "auto" key = {id}>
+            <img src = {src} className = "item" title= {title}  md = "auto" alt = {title} />
+          </Grid>)}
         </Grid>
       </div>
+  )
+}
+
+function Work(){
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  
+  const handleSubmit = (evt) => {
+      evt.preventDefault();
+      alert(`Submitting Name ${name} ${email} ${message}`)
+  }
+  return(
+    <div className = "form-body">
+      <h2 className = "work-title">Let's do some business together</h2>
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
+          <input
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+        </label>
+        <label>
+          Email:
+          <input
+            type="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          />
+        </label>
+        <label>
+          Your Message:
+          <textarea
+            value={message}
+            onChange={e => setMessage(e.target.value)}
+          />
+        </label>
+        <div >
+          <input type="submit" value="Submit" className = "btn" />
+        </div>
+      </form>
+
+    </div>
   )
 }
 

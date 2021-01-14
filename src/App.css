@@ -62,7 +62,9 @@ h3{
   margin-top: 50px;
   text-transform: lowercase;
   padding: 0.2rem 4rem;
-  color: #f4f4f4;
+  /*color: #f4f4f4;*/
+  color: black;
+  font-family: 'Playfair';
   text-transform: uppercase;
   font-size: 1.5rem;
   text-decoration: none;
@@ -184,13 +186,14 @@ nav{
 }
 
 .single-footer{
-  width: 100%;
-  float: right;
+
   text-align: center;
   color: #ffff;
 }
 .single-footer a{
-  width: 100%;
+  
+  text-decoration: none;
+  color: white;
 
 }
 footer{
@@ -198,6 +201,7 @@ footer{
   height: 20vh;
   position: relative;
   bottom: 0;
+  margin-bottom: 0;
   background-color: #080f36;
 }
 
@@ -215,6 +219,51 @@ nav {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
+}
+
+.work-title{
+  margin-left: 2%;
+  color: black;
+  font-family: 'Playfair'
+}
+
+form{
+  margin-top: 1%;
+  height: 100%;
+  margin-bottom: 14%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 5%;
+}
+
+
+ input [type=submit]{
+
+  transform: translateX(-25%);
+  
+}
+
+
+form label{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Playfair';
+  margin: 10px
+  
+}
+
+form label input{
+  width: 250px;
+}
+form label textarea{
+  width: 500px;
+}
+
+
+.form-body{
+  display: block;
 }
 
 
