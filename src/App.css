@@ -1,69 +1,226 @@
 
 
 .App {
-  background-image: url(https://www.formica.com/en-ie/-/media/formica/emea/products/swatch-images/f9485/f9485-swatch.jpg?rev=0eb0345fe06b4047816b46f3f0d8d09e);
-  background-size: cover;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 2;
 }
 
+/* Landing Styling */
 
-.slide-right {
+
+.landing-content{
+  width: 45%;
+  align-content: center;
+  height: 100vh;
+  justify-self: center;
+  text-align: left;
+  margin-left: 45px;
+  margin-top: 100px
+}
+
+.overlay{
+  height: 100vh;
   width: 100%;
-  max-width: 100%
+  z-index:3; 
+  background-color: rgba(0,0,0,0.5)
+}
+
+@font-face {
+  font-family: 'PlayFair';
+  src: local('PlayFair'), url(./Fonts/PlayfairDisplay-Regular.ttf) format('woff');
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: local('OpenSans'), url(./Fonts/OpenSans-Regular.ttf) format('woff');
 }
 
 .name {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color:#cfcfcf ;
-  animation: 2s slide-right 2s forwards;
-    transform:translateX(-100%);
+  font-family: 'PlayFair' ;
+  color:white ;
+  text-shadow: 5px 2px #575757;
 }
 
-.slide-left {
-  width: 100%;
-  transform: translateY(-150px) ;
-  max-width: 100%
+.name-home {
+  font-family: 'PlayFair' ;
+  color:black ;
+  width: 40%;
 }
 
-.line{
-  animation: 2s slide-left 2s backwards;
-    transform:translateX(100%);
-  animation-fill-mode: forwards;  
+h3{
+  margin-top: -10px;
+  margin-bottom: 50;
+  font-family: 'PlayFair';
+  color:white ;
+  text-shadow: 2px 2px #575757;
 }
-.enterButton{
-  background: rgba(68,68,68,0.2);
-  border-width: 4px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  border-color: thistle;
-  border-radius: 2pc;
-  color: white;
-  font-size: 2rem;
-  transform: translateY(-150px) ;
-  width: 11vh;
-  height: 5vh;
+
+.btn {
+  margin-left: 100px;
+  margin-top: 50px;
+  text-transform: lowercase;
+  padding: 0.2rem 4rem;
+  color: #f4f4f4;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: 1px solid #3d2a66;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  text-justify: auto;
   align-self: center;
+}
 
+.btn:hover {
+  box-shadow: 1px 1px 25px 10px rgba(65, 65, 65, 0.4)
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    black,
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.btn:hover:before {
+  left: 100%;
+}
+
+/* Home Styling */
+
+.header{
+  display: flex;
+  margin-left: 5rem;
+  margin-right: 5rem;
+  justify-content: center;
+
+}
+
+.home-container{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-content: center;
+  background-color:#f5f5f5;
+}
+.grid-container{
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+nav{
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  align-self: center;
+  list-style-type: none;
+  justify-content: center;
+}
+
+.Home-nav{
+  padding: 0;
+  color: #3d2a66;
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 1.25rem;
+  font-family: 'PlayFair'; 
+  transition: 0.3s;
+}
+
+.Home-nav:hover{
+  font-size: 1.50rem;
 }
 
 
 
-@keyframes slide-right {
-  to {
-    transform:translateX(0);
-  }
+.item{
+  height:30vh;
+  transition: 0.6s;
 }
 
-@keyframes slide-left {
-  to {
-    transform:translateX(0);
-  }
+.item:hover{
+  
+  height: 37vh;
 }
+
+.about-container{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.about-body{
+  color: black;
+  margin: 5%;
+  font-size: large;
+  font-family: 'OpenSans';
+  margin-right: 25%;
+  
+  
+}
+
+.about-photo{
+  height: 80vh;
+  width: 50%;
+  margin: 5%;
+  margin-left: 10%;
+}
+
+
+
+.footer-wrapper{
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.single-footer{
+  width: 100%;
+  float: right;
+  text-align: center;
+  color: #ffff;
+}
+.single-footer a{
+  width: 100%;
+
+}
+footer{
+  width: 100%;
+  height: 20vh;
+  position: relative;
+  bottom: 0;
+  background-color: #080f36;
+}
+
+.footer-about{
+  width: 100%;
+  height: 20vh;
+  position: absolute;
+  bottom: 0;
+  background-color: #142e14;
+}
+
+
+
+nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+
+
+
+
 
 
 
