@@ -20,6 +20,18 @@ import {
   useRouteMatch
 } from "react-router-dom";
 
+/*
+to deploy
+
+cd to your project folder
+
+firebase init
+ 
+firebase deploy
+
+
+ */
+
 
 
 export default function App() {
@@ -88,9 +100,7 @@ function Home() {
           <li>
             <Link to={`${url}/work`} className = "Home-nav">Work with Me</Link>
           </li>
-          <li>
-            <a href = "https://bakedandshot.com" target = "_blank" rel="noopener noreferrer" className = "Home-nav">Blog</a>
-          </li>
+          
         </nav>
       </div>
     
@@ -118,7 +128,7 @@ function Home() {
           <div className = "single-footer">
             <h2>Links</h2>
             <a href = "https://www.instagram.com/bakedandshot/" target = "_blank" rel="noopener noreferrer"><p>Instagram</p></a>
-            <p>Facebook</p>
+            <a href = "https://www.facebook.com/Not-Just-Food-112232023947292" target = "_blank" rel="noopener noreferrer"><p>Facebook</p></a>
           </div>
         </div>
       </footer>     
@@ -157,35 +167,52 @@ function Work(){
   }
   return(
     <div className = "form-body">
-      <h2 className = "work-title">Let's do some business together</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
-          <input
-            type="text"
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-        </label>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </label>
-        <label>
-          Your Message:
-          <textarea
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-          />
-        </label>
-        <div >
-          <input type="submit" value="Submit" className = "btn" />
-        </div>
-      </form>
+      <div>
+        <h2 className = "work-title">Let's do some business together</h2>
+        <form onSubmit={handleSubmit}>
+          <label>
+            First Name:
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+            />
+          </label>
+          <label>
+            Email:
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </label>
+          <label>
+            Your Message:
+            <textarea
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+            />
+          </label>
+          <div >
+            <input type="submit" value="Submit" className = "btn" />
+          </div>
+        </form>
+      </div>
+      <p className = "about-body">
+        Are you looking for a collaboration?
+        <br/><br/>
+        If you are looking for someone which is passionate about food and photography you are in the perfect place!
+        <br/><br/>
+        I am available for:
+        <br/><br/>
+        -recipes development ;
+        <br/><br/>
+        -sponsored posts for social media;
+        <br/><br/>
+        -food photography for cookbooks, magazine or product brand;
+        <br/><br/>
+        or anything else you can benefit from don’t hesitate to contact me at robertafoodphotography@gmail.com
+      </p>
 
     </div>
   )

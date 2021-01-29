@@ -115,7 +115,7 @@ h3{
   flex-direction: column;
   align-self: center;
   align-content: center;
-  background-color:#f5f5f5;
+  background-color:#e8e2d1
 }
 .grid-container{
   margin-left: 1rem;
@@ -134,7 +134,7 @@ nav{
   color: #3d2a66;
   text-decoration: none;
   list-style-type: none;
-  font-size: 1.25rem;
+  font-size: 1.30rem;
   font-family: 'PlayFair'; 
   transition: 0.3s;
 }
@@ -151,8 +151,9 @@ nav{
 }
 
 .item:hover{
-  
+  z-index: 2;
   height: 37vh;
+  margin: -15px
 }
 
 .about-container{
@@ -230,7 +231,6 @@ nav {
 form{
   margin-top: 1%;
   height: 100%;
-  margin-bottom: 14%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -263,7 +263,10 @@ form label textarea{
 
 
 .form-body{
-  display: block;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  margin-bottom: 15vh;
 }
 
 
