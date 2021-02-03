@@ -9,6 +9,8 @@ import image2 from './Photos/overlay slide 4.jpg'
 import image3 from './Photos/overlay slide 3.jpg'
 import image4 from './Photos/overlay slide 5.jpg'
 
+import { db } from './firebase'
+
 
 
 import './App.css';
@@ -160,10 +162,28 @@ function Work(){
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  const [loader, setLoader] = useState(false)
   
   const handleSubmit = (evt) => {
       evt.preventDefault();
-      alert(`Submitting Name ${name} ${email} ${message}`)
+
+      setLoader(true)
+  
+      db.collection('contacts').add({
+        name: name,
+        email: email,
+        message: message
+      }).then(() => {
+        alert('Message submitted! 👌')
+        setLoader(false)
+      }).catch(error =>{
+        alert(error.message)
+      })
+
+      setName('')
+      setEmail('')
+      setMessage('')
   }
   return(
     <div className = "form-body">
@@ -171,7 +191,7 @@ function Work(){
         <h2 className = "work-title">Let's do some business together</h2>
         <form onSubmit={handleSubmit}>
           <label>
-            First Name:
+            Name:
             <input
               type="text"
               value={name}
@@ -194,7 +214,7 @@ function Work(){
             />
           </label>
           <div >
-            <input type="submit" value="Submit" className = "btn" />
+            <button type="submit" value="Submit" className = "btn" style = {{background: loader? "#ccc" : "white"}} > Submit </button>
           </div>
         </form>
       </div>

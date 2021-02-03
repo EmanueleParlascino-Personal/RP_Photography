@@ -81,6 +81,7 @@ h3{
 }
 
 .btn:before {
+  cursor: pointer;
   content: "";
   position: absolute;
   top: 0;
@@ -104,8 +105,8 @@ h3{
 
 .header{
   display: flex;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 5%;
+  margin-right: 5%;
   justify-content: center;
 
 }
@@ -162,15 +163,26 @@ nav{
   height: 100%;
 }
 
+
+
 .about-body{
   color: black;
   margin: 5%;
   font-size: large;
   font-family: 'OpenSans';
   margin-right: 25%;
-  
-  
+  min-width: 250px;
 }
+
+@media only screen and (max-width: 600px) {
+  .about-container{
+    display: block;
+  }
+}
+
+
+
+
 
 .about-photo{
   height: 80vh;
@@ -179,11 +191,29 @@ nav{
   margin-left: 10%;
 }
 
+@media only screen and (max-width: 600px) {
+
+  .about-photo{
+    height: 80vh;
+    width: 75%;
+    margin: 5%;
+    margin-left: 10%;
+  }
+}
+
 
 
 .footer-wrapper{
   width: 1100px;
   margin: 0 auto;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer-wrapper{
+    width: 600px;
+    margin: 0 auto;
+  }
+
 }
 
 .single-footer{
@@ -259,6 +289,7 @@ form label input{
 }
 form label textarea{
   width: 500px;
+  min-height: 100px;
 }
 
 
@@ -267,6 +298,17 @@ form label textarea{
   align-self: center;
   align-items: center;
   margin-bottom: 15vh;
+  margin: 2%;
+}
+
+@media only screen and (max-width: 600px) {
+  .form-body{
+    display: block;
+    align-self: center;
+    align-items: center;
+    margin-bottom: 15vh;
+    margin: 2%;
+  }
 }
 
 
