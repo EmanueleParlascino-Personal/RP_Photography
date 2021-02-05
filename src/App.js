@@ -187,6 +187,21 @@ function Work(){
   }
   return(
     <div className = "form-body">
+        <p className = "form-text-body">
+        Are you looking for a collaboration?
+        <br/><br/>
+        If you are looking for someone which is passionate about food and photography you are in the perfect place!
+        <br/><br/>
+        I am available for:
+        <br/><br/>
+        -recipes development ;
+        <br/><br/>
+        -sponsored posts for social media;
+        <br/><br/>
+        -food photography for cookbooks, magazine or product brand;
+        <br/><br/>
+        or anything else you can benefit from don’t hesitate to contact me at robertafoodphotography@gmail.com
+      </p>
       <div>
         <h2 className = "work-title">Let's do some business together</h2>
         <form onSubmit={handleSubmit}>
@@ -218,21 +233,7 @@ function Work(){
           </div>
         </form>
       </div>
-      <p className = "about-body">
-        Are you looking for a collaboration?
-        <br/><br/>
-        If you are looking for someone which is passionate about food and photography you are in the perfect place!
-        <br/><br/>
-        I am available for:
-        <br/><br/>
-        -recipes development ;
-        <br/><br/>
-        -sponsored posts for social media;
-        <br/><br/>
-        -food photography for cookbooks, magazine or product brand;
-        <br/><br/>
-        or anything else you can benefit from don’t hesitate to contact me at robertafoodphotography@gmail.com
-      </p>
+    
 
     </div>
   )
@@ -245,7 +246,7 @@ function About() {
 
   return ( 
     <div className = "about-container">
-      <img src = {require(`./Photos/aboutPhoto.jpg`)} className = "about-photo" alt = "That's me! =>"/>
+      
       <p className = "about-body">
         Hello! My name is Roberta.
         <br/><br/>
@@ -256,6 +257,8 @@ function About() {
         <br/><br/>
         So if you are a restauranteur, bar owner, brand manager, food blogger, cookbook or magazine publisher, or just someone who shares my love of stunning photographs of delicious culinary creations, you’ve come to the right place!
         </p>
+
+        <img src = {require(`./Photos/aboutPhoto.jpg`)} className = "about-photo" alt = "That's me! =>"/>
      
     </div>
   );

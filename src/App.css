@@ -170,8 +170,17 @@ nav{
   margin: 5%;
   font-size: large;
   font-family: 'OpenSans';
-  margin-right: 25%;
-  min-width: 250px;
+  
+  min-width: 500px;
+}
+
+.form-text-body{
+  color: black;
+  margin: 5%;
+  font-size: large;
+  font-family: 'OpenSans';
+  min-width: 500px;
+  margin-bottom:4vh ;
 }
 
 @media only screen and (max-width: 600px) {
@@ -187,17 +196,19 @@ nav{
 .about-photo{
   height: 80vh;
   width: 50%;
-  margin: 5%;
-  margin-left: 10%;
+  margin:1%;
+  margin-right: 25%;
 }
 
 @media only screen and (max-width: 600px) {
 
   .about-photo{
-    height: 80vh;
+    height: 90vh;
     width: 75%;
-    margin: 5%;
+    align-self: center;
+    justify-self: center;
     margin-left: 10%;
+    
   }
 }
 
@@ -264,7 +275,7 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-left: 5%;
+
 }
 
 
@@ -297,8 +308,8 @@ form label textarea{
   display: flex;
   align-self: center;
   align-items: center;
-  margin-bottom: 15vh;
-  margin: 2%;
+  margin-bottom: 18vh;
+
 }
 
 @media only screen and (max-width: 600px) {
