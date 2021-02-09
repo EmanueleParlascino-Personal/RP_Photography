@@ -139,6 +139,7 @@ function Home() {
 }
 
 function Gallery() {
+  const [showPhoto, setShowPhoto] = useState(false)
   return(
       <div className = "grid-container">
         <Grid
@@ -150,9 +151,12 @@ function Gallery() {
           >
           {images.map(({id, src, title, type}) => 
           <Grid item xs = "auto" key = {id}>
-            <img src = {src} className = "item" title= {title}  md = "auto" alt = {title} />
-          </Grid>)}
+            <img src = {src} className = "item" title= {title}  md = "auto" alt = {title} onClick = {() => {setShowPhoto(true)}}/>
+            
+          </Grid>)
+          }
         </Grid>
+        
       </div>
   )
 }

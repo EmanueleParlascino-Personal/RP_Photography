@@ -116,6 +116,7 @@ h3{
   flex-direction: column;
   align-self: center;
   align-content: center;
+  width: 100vw;
   background-color:#e8e2d1
 }
 .grid-container{
@@ -130,6 +131,20 @@ nav{
   justify-content: center;
 }
 
+@media only screen and (max-width: 600px) {
+  nav{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    list-style-type: none;
+    justify-content: flex-end;
+    align-content: flex-end;
+    text-align: end;
+    line-height: 5vh;
+  }
+}
+
 .Home-nav{
   padding: 0;
   color: #3d2a66;
@@ -140,6 +155,23 @@ nav{
   transition: 0.3s;
 }
 
+@media only screen and (max-width: 600px) {
+
+  .Home-nav{
+    padding: 0;
+    color: #3d2a66;
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 1rem;
+    font-family: 'PlayFair'; 
+    transition: 0.3s;
+  }
+    .Home-nav:hover{
+      font-size: 1.1rem;
+    }
+}
+
+
 .Home-nav:hover{
   font-size: 1.50rem;
 }
@@ -148,12 +180,19 @@ nav{
 
 .item{
   height:30vh;
-  transition: 0.6s;
+  transition: 0.3s;
+  pointer-events: all;
+}
+
+.item-full{
+  height:100vh;
+  transition: 0.3s;
+  pointer-events: all;
 }
 
 .item:hover{
   z-index: 2;
-  height: 37vh;
+  height: 34vh;
   margin: -15px
 }
 
@@ -171,7 +210,6 @@ nav{
   font-size: large;
   font-family: 'OpenSans';
   
-  min-width: 500px;
 }
 
 .form-text-body{
@@ -179,9 +217,33 @@ nav{
   margin: 5%;
   font-size: large;
   font-family: 'OpenSans';
-  min-width: 500px;
   margin-bottom:4vh ;
 }
+
+
+@media only screen and (max-width: 600px) {
+  .form-text-body{
+    color: black;
+    font-size: medium;
+    width:calc(100% - 30px);
+    left:0;
+    text-overflow: clip;
+    font-family: 'OpenSans';
+    margin-bottom:4vh ;
+  }
+
+  .about-body{
+    color: black;
+    margin: 5%;
+    font-size: medium;
+    font-family: 'OpenSans';
+    font-size: medium;
+    width:calc(100% - 30px);
+    left:0;
+    text-overflow: clip;
+  }
+}
+
 
 @media only screen and (max-width: 600px) {
   .about-container{
@@ -203,7 +265,9 @@ nav{
 @media only screen and (max-width: 600px) {
 
   .about-photo{
-    height: 90vh;
+
+    height: 600px;
+    min-width: 400px;
     width: 75%;
     align-self: center;
     justify-self: center;
@@ -221,7 +285,7 @@ nav{
 
 @media only screen and (max-width: 600px) {
   .footer-wrapper{
-    width: 600px;
+    width: 400px;
     margin: 0 auto;
   }
 
@@ -299,8 +363,14 @@ form label input{
   width: 250px;
 }
 form label textarea{
-  width: 500px;
+  width: 550px;
   min-height: 100px;
+}
+@media only screen and (max-width: 600px) {
+  form label textarea{
+    width: 400px;
+    min-height: 100px;
+  }
 }
 
 
@@ -318,8 +388,17 @@ form label textarea{
     align-self: center;
     align-items: center;
     margin-bottom: 15vh;
-    margin: 2%;
+    width: 100vw;
   }
+}
+
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
 }
 
 
